@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Raindrop3 : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class Raindrop3 : MonoBehaviour
     private Rigidbody2D rb;
     
       private bool isInsideTrigger = false; // the Rigidbody2D component of the player
+
+    public string triggerTag = "SceneTrigger";
+    public string nextSceneName = "Hydro";
 
     void Start()
     {
@@ -48,6 +52,10 @@ public class Raindrop3 : MonoBehaviour
         {// set the flag to true when the player enters the trigger
         isInsideTrigger = true;
         }
+        if (other.CompareTag(triggerTag))
+        {
+            SceneManager.LoadScene(nextSceneName);
+        }
     }
 
     void OnTriggerExit2D(Collider2D other)
@@ -56,6 +64,7 @@ public class Raindrop3 : MonoBehaviour
         { // set the flag to false when the player exits the trigger
         isInsideTrigger = false;
         }
+
     }
 
     }
