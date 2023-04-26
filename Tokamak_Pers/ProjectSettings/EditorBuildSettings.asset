@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Title.unity
+    guid: c99547b3750a4064aaab60135a7c6a70
+  - enabled: 1
     path: Assets/Scenes/Raindrop.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
@@ -17,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WinScene.unity
     guid: bb483ae27c4baf644982a897027597ea
+  - enabled: 1
+    path: Assets/Scenes/LoseScene.unity
+    guid: b32dd7bf1e852fc4a925159e53419bf5
   m_configObjects: {}

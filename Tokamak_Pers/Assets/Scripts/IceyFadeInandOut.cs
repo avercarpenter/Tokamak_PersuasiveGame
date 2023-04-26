@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlasmaFadeIn : MonoBehaviour
+public class IceyFadeInandOut : MonoBehaviour
 {
-    public float startTime = 50.0f; // Time to start the fade in
+    public float startTime = 25.0f; // Time to start the fade in
     public float duration = 10.0f; // Duration of the fade in
     private SpriteRenderer spriteRenderer;
     private float timeElapsed = 0.0f;
@@ -18,7 +18,7 @@ public class PlasmaFadeIn : MonoBehaviour
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
             spriteRenderer.color = new Color(1f, 1f, 1f, 0f);
-            Invoke("IsFading", 50f); // Set initial opacity to 0
+            Invoke("IsFading", 25f); // Set initial opacity to 0
         }
     }
 
@@ -45,4 +45,3 @@ public class PlasmaFadeIn : MonoBehaviour
         isFading = true; 
     }
 }
-

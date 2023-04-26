@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public float freezeTime = 2f;
 
     private Rigidbody2D rb; 
-    private GameManager gameManager;
+   // private GameManager gameManager;
     private Animator anim; 
 
     private bool isFrozen = false;
@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        gameManager = GameObject.FindObjectOfType<GameManager>();
+       // gameManager = GameObject.FindObjectOfType<GameManager>();
         anim = GetComponent<Animator>();
     }
 
@@ -48,7 +48,8 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("DeathBoundary"))
         {
             Debug.Log("ded");
-            gameManager.GameOver();
+            SceneManager.LoadScene("LoseScene");
+          //  gameManager.GameOver();
             
         }
 

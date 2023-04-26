@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Triterium : MonoBehaviour
 {
@@ -8,24 +9,24 @@ public class Triterium : MonoBehaviour
 
     private bool isMoving = false;
 
+    void Start()
+    {
+        if (SceneManager.GetActiveScene().name == "Tokamak")
+        {
+            Invoke("StartMoving", 55f);
+        }
+    }
+
     void Update()
     {
-        if (Time.time >= 55f && !isMoving)
-        {
-            isMoving = true;
-        }
-
         if (isMoving)
         {
             transform.Translate(Vector3.left * speed * Time.deltaTime);
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    void StartMoving()
     {
-        if (other.CompareTag("Player"))
-        {
-           // GameManager.Instance.PlayCutSceneAndEndGame();
-        }
+        isMoving = true;
     }
 }
