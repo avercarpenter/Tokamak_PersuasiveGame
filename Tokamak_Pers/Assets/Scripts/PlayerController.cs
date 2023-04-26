@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private float freezeTimer = 0f;
     public AudioClip fuse1;
     public AudioClip fuse2;
+    public AudioClip frozen;
     //AudioSource FuseSound1;
     //AudioSource FuseSound2;
 
@@ -61,6 +62,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Frozen");
             anim.SetBool("Frozen", true);
+            AudioSource.PlayClipAtPoint(frozen, transform.position);
             isFrozen = true;    
         }
 

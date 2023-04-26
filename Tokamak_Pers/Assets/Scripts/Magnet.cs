@@ -13,7 +13,7 @@ public class Magnet : MonoBehaviour
     {
         anim = GetComponentInChildren<Animator>();
       //  anim.enabled = false;
-        anim.SetBool("Magnet", false);
+       // anim.SetBool("Magnet", false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

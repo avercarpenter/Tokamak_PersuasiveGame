@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 666835855913184821}
   - component: {fileID: 666835855913184820}
-  - component: {fileID: 666835855913184823}
   - component: {fileID: 666835855913184822}
   - component: {fileID: 666835855913184825}
+  - component: {fileID: 630806384405654893}
   m_Layer: 0
   m_Name: ice
   m_TagString: Ice
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cc77cf08cae52ab48923b56666bf084d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c4f8b1f8a6514b34baae3fb559776188, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -88,22 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &666835855913184823
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 666835855913184824}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.11396407, y: -0.045544364}
-  serializedVersion: 2
-  m_Radius: 0.89544606
 --- !u!50 &666835855913184822
 Rigidbody2D:
   serializedVersion: 4
@@ -124,7 +108,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 3
+  m_Constraints: 7
 --- !u!114 &666835855913184825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,7 +123,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startSpeed: 5
   acceleration: 0.1
-  freezeTime: 0.5
+--- !u!61 &630806384405654893
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666835855913184824}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.11056042, y: 0.05791092}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4, y: 4}
+    newSize: {x: 4, y: 4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.7048674, y: 1.2307358}
+  m_EdgeRadius: 0
 --- !u!1001 &5674519740838387597
 PrefabInstance:
   m_ObjectHideFlags: 0
