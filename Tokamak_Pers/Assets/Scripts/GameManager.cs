@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -29,11 +30,14 @@ public class GameManager : MonoBehaviour
 
     private float startTime;
 
-    void Start()
+    void OnEnable()
     {
-        startTime = Time.time;
-        InvokeRepeating("SpawnObstacle", spawnDelay, spawnInterval);
-        InvokeRepeating("SpawnSingleObstacle", singleObstacleSpawnDelay, singleObstacleSpawnInterval);
+        if (SceneManager.GetActiveScene().name == "Tokamak")
+        {
+            startTime = Time.time;
+            InvokeRepeating("SpawnObstacle", spawnDelay, spawnInterval);
+            InvokeRepeating("SpawnSingleObstacle", singleObstacleSpawnDelay, singleObstacleSpawnInterval);
+        }
     }
 
     void SpawnObstacle()

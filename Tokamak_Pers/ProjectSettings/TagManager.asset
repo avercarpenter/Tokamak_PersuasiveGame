@@ -10,6 +10,7 @@ TagManager:
   - DeathBoundary
   - LeftBoundary
   - Ice
+  - Tri
   layers:
   - Default
   - TransparentFX

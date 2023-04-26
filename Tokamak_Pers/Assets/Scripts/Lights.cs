@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Lights : MonoBehaviour
 {
@@ -17,7 +18,11 @@ public class Lights : MonoBehaviour
     
     void Start()
     {
-        lightComponent = GetComponent<Light>();
+        // Check if the current scene is the one where the Lights script should be active
+        if (SceneManager.GetActiveScene().name == "Tokamak")
+        {
+            lightComponent = GetComponent<Light>();
+        }
     }
 
     void Update()

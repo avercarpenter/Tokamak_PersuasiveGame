@@ -8,7 +8,8 @@ public class Obstacle2 : MonoBehaviour
     public float acceleration = 1f;
     private GameManager gameManager;
 
-    void Start() {
+    void OnEnable() 
+    {
         gameManager = GameObject.FindObjectOfType<GameManager>();
     }
 

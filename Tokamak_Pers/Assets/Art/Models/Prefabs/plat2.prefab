@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1637348504301345546}
   - component: {fileID: 2384335354970313903}
   - component: {fileID: 500509884370509925}
-  - component: {fileID: 8400136755728546912}
   - component: {fileID: 496591188372126432}
   - component: {fileID: -763141666820478368}
+  - component: {fileID: -8074988094117351400}
   m_Layer: 0
   m_Name: plat2
   m_TagString: Untagged
@@ -86,20 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8400136755728546912
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2158024007752237488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 468bfb3532d0b6e48b46697fc4ed6fd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startSpeed: 5
-  acceleration: 1
 --- !u!50 &496591188372126432
 Rigidbody2D:
   serializedVersion: 4
@@ -147,3 +133,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 20.892437, y: 4.3426366}
   m_EdgeRadius: 0
+--- !u!114 &-8074988094117351400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2158024007752237488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f52e626865e3c6428f61d32238e3f71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startSpeed: 5
+  acceleration: 1

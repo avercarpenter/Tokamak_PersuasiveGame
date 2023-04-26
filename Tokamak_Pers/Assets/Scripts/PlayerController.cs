@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -48,6 +49,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("ded");
             gameManager.GameOver();
+            
         }
 
         if (other.CompareTag("Ice"))
@@ -56,5 +58,23 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("Frozen", true);
             isFrozen = true;    
         }
+
+        if(other.CompareTag("Tri"))
+        {
+        // Destroy(other.GameObject);
+            Debug.Log("Fuse");
+            Destroy(other.gameObject); 
+            anim.SetTrigger("Fusion");
+            isFrozen = true;
+            rb.velocity = Vector2.zero;
+            transform.position = new Vector2(0f, 0f);
+            StartCoroutine(LoadNextScene());
+        }
     }
-} 
+
+    IEnumerator LoadNextScene()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+}
