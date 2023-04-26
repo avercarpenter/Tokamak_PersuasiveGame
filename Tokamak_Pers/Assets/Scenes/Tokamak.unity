@@ -1560,6 +1560,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   freezeTime: 2
+  fuse1: {fileID: 8300000, guid: 583e52ceb9d89054990bcc4604b70824, type: 3}
+  fuse2: {fileID: 8300000, guid: 963524dd087cb4e48aae04fdeb4cd7ca, type: 3}
 --- !u!61 &991426294
 BoxCollider2D:
   m_ObjectHideFlags: 0

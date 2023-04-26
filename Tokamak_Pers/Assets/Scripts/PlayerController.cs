@@ -15,6 +15,10 @@ public class PlayerController : MonoBehaviour
 
     private bool isFrozen = false;
     private float freezeTimer = 0f;
+    //public AudioClip fuse1;
+    //public AudioClip fuse2;
+    //AudioSource FuseSound1;
+    //AudioSource FuseSound2;
 
     void Start()
     {
@@ -67,6 +71,8 @@ public class PlayerController : MonoBehaviour
             Destroy(other.gameObject); 
             anim.SetTrigger("Fusion");
             // add audio here 
+            //FuseSound1.PlayOneShot(fuse1);
+            //FuseSound2.PlayOneShot(fuse2);
             
             isFrozen = true;
             rb.velocity = Vector2.zero;
