@@ -11,6 +11,7 @@ TagManager:
   - LeftBoundary
   - Ice
   - Tri
+  - CameraBoundary
   layers:
   - Default
   - TransparentFX
