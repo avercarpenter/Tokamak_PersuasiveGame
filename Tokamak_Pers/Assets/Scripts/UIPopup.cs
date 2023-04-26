@@ -7,6 +7,7 @@ public class UIPopup : MonoBehaviour
 {
     public GameObject uiCanvas; // reference to the UI canvas object
     public string triggerTag = "Player"; // the tag of the object that can trigger the UI canvas
+    //public AudioClip ding;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -19,6 +20,7 @@ public class UIPopup : MonoBehaviour
             // activate the UI canvas
             uiCanvas.SetActive(true);
         }
+        //audioSouce.Play();
     }
 
     public void OnContinueButtonClicked()
