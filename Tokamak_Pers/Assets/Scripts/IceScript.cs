@@ -20,25 +20,27 @@ public class IceScript : MonoBehaviour
     }
 
 
-    void OnTriggerEnter2D(Collider2D other) {
-        if (other.CompareTag("Player"))
-        {
-            // Disable the player's movement script temporarily
-            other.GetComponent<PlayerController>().enabled = false;
+    void OnTriggerEnter2D(Collider2D other) 
+    {
+        // if (other.CompareTag("Player"))
+        // {
+        //     // Disable the player's movement script temporarily
+        //     other.GetComponent<PlayerController>().enabled = false;
 
-            // Wait for freezeTime seconds before enabling the movement script again
-            StartCoroutine(FreezeCoroutine(other.GetComponent<PlayerController>()));
-        }
-        else if (other.CompareTag("LeftBoundary")) {
+        //     // Wait for freezeTime seconds before enabling the movement script again
+        //     StartCoroutine(FreezeCoroutine(other.GetComponent<PlayerController>()));
+        // }
+        if (other.CompareTag("LeftBoundary")) 
+        {
             Destroy(gameObject);
         }
     }
 
-    IEnumerator FreezeCoroutine(PlayerController movement)
-    {
-        yield return new WaitForSeconds(freezeTime);
+    // IEnumerator FreezeCoroutine(PlayerController movement)
+    // {
+    //     yield return new WaitForSeconds(freezeTime);
 
-        // Enable the player's movement script again
-        movement.enabled = true;
-    }
+    //     // Enable the player's movement script again
+    //     movement.enabled = true;
+    // }
 }

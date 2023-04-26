@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public List<GameObject> obstaclePrefabs;
-     public Transform[] spawnPoints;
+    public Transform[] spawnPoints;
 
     public float spawnInterval = 2f;
     public float spawnDelay = 2f;
@@ -21,24 +21,47 @@ public class GameManager : MonoBehaviour
     // The obstacle prefab to be used for single obstacle spawning
     public GameObject singleObstacle;
 
+    // The spawn interval for the single obstacle
+    public float singleObstacleSpawnInterval = 3f;
+
+    // The delay before the first single obstacle spawns
+    public float singleObstacleSpawnDelay = 5f;
+
+    private float startTime;
+
     void Start()
     {
+        startTime = Time.time;
         InvokeRepeating("SpawnObstacle", spawnDelay, spawnInterval);
+        InvokeRepeating("SpawnSingleObstacle", singleObstacleSpawnDelay, singleObstacleSpawnInterval);
     }
 
     void SpawnObstacle()
     {
-        // Check if the current game time has passed the switch time
+        if (Time.time - startTime > 50f) {
+            return;
+        }
+
         if (Time.time >= singleObstacleTime)
         {
-            // Spawn the single obstacle prefab
             Instantiate(singleObstacle, spawnPoints[Random.Range(0, spawnPoints.Length)].transform.position, Quaternion.identity);
         }
         else
         {
-            // Spawn a random obstacle prefab from the list
             GameObject obstaclePrefab = obstaclePrefabs[Random.Range(0, obstaclePrefabs.Count)];
             Instantiate(obstaclePrefab, spawnPoints[Random.Range(0, spawnPoints.Length)].transform.position, Quaternion.identity);
+        }
+    }
+
+    void SpawnSingleObstacle()
+    {
+        if (Time.time - startTime > 50f) {
+            return;
+        }
+
+        if (Time.time >= singleObstacleTime)
+        {
+            Instantiate(singleObstaclePrefab, spawnPoints[Random.Range(0, spawnPoints.Length)].transform.position, Quaternion.identity);
         }
     }
 
@@ -51,4 +74,14 @@ public class GameManager : MonoBehaviour
             // Perform any other game over logic here (e.g. show a game over screen, stop spawning obstacles, etc.)
         }
     }
+
+    
 }
+
+
+
+
+
+
+
+
