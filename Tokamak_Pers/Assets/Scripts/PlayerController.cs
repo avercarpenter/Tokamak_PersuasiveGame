@@ -66,6 +66,8 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Fuse");
             Destroy(other.gameObject); 
             anim.SetTrigger("Fusion");
+            // add audio here 
+            
             isFrozen = true;
             rb.velocity = Vector2.zero;
             transform.position = new Vector2(0f, 0f);
